@@ -26,18 +26,19 @@ public class Login_PO {
 	String password_xPath = "//input[@id='password']";
 	String login_button_xPath = "//input[@type='submit'][@id='Login']";
 	String home_tab_xPath = "//span[@class='slds-truncate'][contains(text(),'Home')]";
+	String apps_xPath = "//div[@class='slds-icon-waffle']";
 
 	
 	public void NavigateURL(WebDriver driver, String path, String sheet, int testNumber) {
 		
 
-			Common_Features common_Features = new Common_Features();
-			String URL = common_Features.retrieveDataFromExcel(path, sheet, "URL", testNumber);
-			driver.get(URL);
-			
-			List<WebElement> username_exists = driver.findElements(By.xpath(username_Label_xPath));
-			
-			Assert.assertEquals(username_exists.isEmpty(), false);
+		Common_Features common_Features = new Common_Features();
+		String URL = common_Features.retrieveDataFromExcel(path, sheet, "URL", testNumber);
+		driver.get(URL);
+		
+		List<WebElement> username_exists = driver.findElements(By.xpath(username_Label_xPath));
+		
+		Assert.assertEquals(username_exists.isEmpty(), false);
 		
 	}
 	
@@ -47,11 +48,19 @@ public class Login_PO {
 		
 		String userName = Common_Features.retrieveDataFromExcel(filePath, sheet, "UserName", testNumber);
 		String password = Common_Features.retrieveDataFromExcel(filePath, sheet, "Password", testNumber);
-		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebDriverWait wait = new WebDriverWait(driver,50);
 		wait.until(ExpectedConditions.visibilityOf(driver.findElement(By.xpath(username_xPath))));
+		
+		//Enter credentials and login to Salesforce
 		driver.findElement(By.xpath(username_xPath)).sendKeys(userName);
 		driver.findElement(By.xpath(password_xPath)).sendKeys(password);
 		driver.findElement(By.xpath(login_button_xPath)).click();
+		
+		//Verify if the user login is successful
+
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath(apps_xPath)));
+		Assert.assertEquals(driver.findElements(By.xpath(home_tab_xPath)).size()>0, true);
+		
 		
 		
 	}

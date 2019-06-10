@@ -2,12 +2,12 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="11694" started-at="2019-06-10T03:00:50Z" finished-at="2019-06-10T03:01:02Z">
+  <suite name="Suite" duration-ms="20362" started-at="2019-06-10T05:45:56Z" finished-at="2019-06-10T05:46:17Z">
     <groups>
     </groups>
-    <test name="CreateAccount" duration-ms="11694" started-at="2019-06-10T03:00:50Z" finished-at="2019-06-10T03:01:02Z">
+    <test name="CreateAccount" duration-ms="20362" started-at="2019-06-10T05:45:56Z" finished-at="2019-06-10T05:46:17Z">
       <class name="Tests.Create_Account">
-        <test-method status="PASS" signature="createAccount_MandatoryFields(int, java.lang.String)[pri:0, instance:Tests.Create_Account@735b5592]" name="createAccount_MandatoryFields" duration-ms="11670" started-at="2019-06-10T03:00:50Z" finished-at="2019-06-10T03:01:02Z">
+        <test-method status="PASS" signature="createAccount_MandatoryFields(int, java.lang.String)[pri:0, instance:Tests.Create_Account@735b5592]" name="createAccount_MandatoryFields" duration-ms="20327" started-at="2019-06-10T05:45:57Z" finished-at="2019-06-10T05:46:17Z">
           <params>
             <param index="0">
               <value>
