@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" name="Failed suite [Suite]">
+  <test thread-count="5" name="CreateAccount(failed)">
+    <parameter name="testNumber" value="1"/>
+    <parameter name="browser" value="Chrome"/>
+    <classes>
+      <class name="Tests.Create_Account">
+        <methods>
+          <include name="createAccount_MandatoryFields" invocation-numbers="0"/>
+        </methods>
+      </class> <!-- Tests.Create_Account -->
+    </classes>
+  </test> <!-- CreateAccount(failed) -->
+</suite> <!-- Failed suite [Suite] -->
