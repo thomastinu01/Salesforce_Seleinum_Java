@@ -29,7 +29,7 @@ public class Common_Features {
 		return driver;
 	}
 
-	public String retrieveDataFromExcel(String path, String sheet, String dataColumn, int testNumber) {
+	public static String retrieveDataFromExcel(String path, String sheet, String dataColumn, int testNumber) {
 
 		String data = null;
 		

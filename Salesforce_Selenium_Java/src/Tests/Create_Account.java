@@ -22,6 +22,7 @@ public class Create_Account {
 		
 		Login_PO Login_PO = new Login_PO();
 		Login_PO.NavigateURL(driver, filePath, sheet, testNumber);
+		Login_PO.Salesforce_Login(driver, filePath, sheet, testNumber);
 		
 		
 		common_Features.endTest(driver);
